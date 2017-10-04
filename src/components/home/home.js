@@ -6,6 +6,11 @@ export default class Home extends Component {
     return(
     <div>
       <NavBar />
+      <div>
+        <div className='welcome'>
+          <h1 className='welcomeTitle'>Welcome</h1>
+        </div>
+      </div>
     </div>
   )}
 }

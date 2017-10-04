@@ -1,16 +1,18 @@
+/*fonts
+font-family: 'Marcellus', serif;
+font-family: 'Gilda Display', serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Lobster Two', cursive;*/
+
+
 .navbarSection {
   background-color: white;
-  height: 18em;
+  height: 20em;
   background-image: url('../images/onion.jpg');
-  /*background-attachment: fixed;*/
+  background-position: center;
   background-size: cover;
-  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
-}
-
-.navbar {
-
 }
 
 #logo {
@@ -20,4 +22,26 @@
   padding: 1em;
   background-color: rgba(219, 219, 212, 0.50);
   border-radius: 25px;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.links a {
+  margin-right: 3em;
+  padding: .5em;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  background-color: rgba(219, 219, 212, 0.50);
+  border-radius: 10px;
+}
+
+.welcomeTitle {
+  font-family: 'Lobster Two', cursive;
+  font-size: 7em;
+  font-style: italic;
+  margin-left: 1em;
 }
