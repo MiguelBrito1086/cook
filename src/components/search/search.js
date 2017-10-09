@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchButton from './searchButton';
 import SearchResults from './searchResults';
 
 const API_KEY = '07ca88bbbf944fd37cd7ca724a67151b';
@@ -21,12 +22,12 @@ export default class Search extends Component {
   fetchRecipe = (event) => {
     event.preventDefault();
     const { recipe } = this.state;
-    let recipeURL = `https:http://food2fork.com/api/search?key=${API_KEY}&q=${recipe}`;
+    let recipeURL = `https://food2fork.com/api/search?key=${API_KEY}&q=${recipe}`;
 
     fetch(recipeURL)
     .then(r => r.json())
-    .then(({recipe}) => {
-      this.setState({recipe});
+    .then(({recipes}) => {
+      this.setState({recipes});
     })
   }
 
@@ -36,9 +37,10 @@ export default class Search extends Component {
           <form action="submit">
             <input type="text" onChange={this._search} placeholder='Find a Recipe' value={this.state.recipe}/>
           </form>
-          <SearchResults onClick={this.fetchRecipe} />
+          <SearchButton onClick={this.fetchRecipe} />
+          <SearchResults results={this.state.recipes}/>
         </div>
       )
-      console.log(SearchResults);
+      console.log(SearchButton);
   }
 }

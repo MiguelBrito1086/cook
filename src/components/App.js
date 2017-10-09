@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import '../styles/App.css';
 import Home from './home/home';
+import CreatePage from './create/createPage';
+import SavesPage from './saves/savesPage';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Home />
-      </div>
+      <BrowserRouter>
+        <BaseLayout>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/create' component={CreatePage} />
+            <Route path='/saved' component={SavesPage} />
+          </Switch>
+        </BaseLayout>
+      </BrowserRouter>
     );
   }
 }
