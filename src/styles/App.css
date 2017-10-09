@@ -18,7 +18,7 @@ font-family: 'Lobster Two', cursive;*/
 #logo {
   width: 12em;
   height: auto;
-  margin: 2em;
+  margin: 1.75em;
   padding: 1em;
   background-color: rgba(219, 219, 212, 0.50);
   border-radius: 25px;
@@ -37,11 +37,107 @@ font-family: 'Lobster Two', cursive;*/
   font-size: 1.5em;
   background-color: rgba(219, 219, 212, 0.50);
   border-radius: 10px;
+  font-family: 'Poiret One', cursive;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.welcomeSection {
+  height: 34em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-image: url('../images/salad.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .welcomeTitle {
   font-family: 'Lobster Two', cursive;
   font-size: 7em;
   font-style: italic;
-  margin-left: 1em;
+  margin: 1em 0em 0em 1em;
+  opacity: 1;
+}
+
+.welcome p {
+  margin-left: 12em;
+  font-family: 'Poiret One', cursive;
+  font-size: 26px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.welcomeCook {
+  font-family: 'Lobster Two', cursive;
+  font-size: 36px;
+}
+
+.searchSection {
+  height: 16em;
+  background-image: url('../images/grill.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1em;
+}
+
+.searchSection h1 {
+  font-size: 40px;
+  width: 13em;
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+  margin: 1em;
+  padding: .2em;
+  background-color: rgba(219, 219, 212, 0.30);
+  border-radius: 10px;
+}
+
+.searchBarSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+}
+
+.searchBarSection input {
+  width: 20em;
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  padding: .2em 0em .2em .5em;
+  margin-right: 1em;
+  border-radius: 5px;
+  border: none;
+  color: #173D77;
+}
+
+.searchBarSection input:focus {
+  outline: none;
+}
+
+.searchBarSection input::placeholder {
+  color: #91AACE;
+  font-style: italic;
+}
+
+.searchBarSection button {
+  width: 8em;
+  border: none;
+  border-radius: 5px;
+  background-color: #6488bb;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+}
+
+.searchBarSection button:focus {
+  outline: none;
+}
+
+
+.searchBarSection button:hover {
+  background-color: #F4C63B;
+}
+
+.searchResultsSection {
+  /*height: 40em;*/
 }
