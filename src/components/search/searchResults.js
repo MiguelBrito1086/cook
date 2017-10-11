@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react"
 
-const SearchResults = ({ results }) =>
+const SearchResults = ({ results }) => (
   <ul>
-    {results.map((result) =>
-      <li key={result.id}>
-        <img src={result.img_url} alt={result.title}/>
+    {results.map(result => (
+      <li key={result.recipe_id}>
         <h1>{result.title}</h1>
+        <img src={result.image_url} alt={result.title} />
       </li>
-    )}
+    ))}
   </ul>
+)
 
 export default SearchResults

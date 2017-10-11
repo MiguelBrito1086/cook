@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import Logo from '../../images/CookLogo.png';
 
 export default class NavBar extends Component {
@@ -30,9 +31,9 @@ export default class NavBar extends Component {
           <img src={Logo} alt="Logo" id='logo'/>
         </div>
         <div className='links'>
-            <a href='#Home' to='#Home'>Home</a>
-            <a href='#Saved' to='#Saved'>Saved Recipes</a>
-            <a href='#Create' to='#Create'>Create a Recipe</a>
+            <NavLink exact to='/'>Home</NavLink>
+            <NavLink to='/Saved'>Saved Recipes</NavLink>
+            <NavLink to='/Create'>Create a Recipe</NavLink>
         </div>
       </div>
     </div>

@@ -10,13 +10,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <BaseLayout>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/create' component={CreatePage} />
             <Route path='/saved' component={SavesPage} />
           </Switch>
-        </BaseLayout>
       </BrowserRouter>
     );
   }
