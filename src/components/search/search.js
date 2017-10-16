@@ -49,6 +49,5 @@ export default class Search extends Component {
         <SearchResults results={this.state.recipes} />
       </div>
     )
-    console.log(SearchButton)
   }
 }

@@ -128,6 +128,7 @@ font-family: 'Lobster Two', cursive;*/
   font-family: 'Quicksand', sans-serif;
   font-size: 18px;
   margin-top: 1em;
+  margin-bottom: 2.5em;
 }
 
 .searchBarSection button:focus {
@@ -141,4 +142,32 @@ font-family: 'Lobster Two', cursive;*/
 
 .searchResultsSection {
   /*height: 40em;*/
+}
+
+.searchThumbNail {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: #173D77;
+  margin: .75em 0em 1em 0em;
+  padding: 0;
+}
+
+.searchThumbNail li {
+  list-style: none;
+  margin-bottom: 2em;
+}
+
+.listThumbNail a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #F4C63B;
+}
+
+.thumbNailImage{
+  width: 20em;
+  height: 20em;
+  object-fit: cover;
 }

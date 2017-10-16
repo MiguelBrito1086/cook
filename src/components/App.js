@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../styles/App.css';
 import Home from './home/home';
 import CreatePage from './create/createPage';
-import SavesPage from './saves/savesPage';
+// import SavesPage from './saves/savesPage';
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/create' component={CreatePage} />
-            <Route path='/saved' component={SavesPage} />
+            {/* <Route path='/saved' component={SavesPage} /> */}
           </Switch>
       </BrowserRouter>
     );

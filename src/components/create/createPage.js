@@ -4,6 +4,7 @@ import AddIngredient from '../create/addIngredient';
 // import AddInstruction from './create/addInstruction';
 
 export default class CreatePage extends Component {
+
   render() {
     return (
       <div>
