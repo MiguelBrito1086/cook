@@ -5,7 +5,6 @@ const SearchResults = ({ results }) => (
     {results.map(result => (
       <li key={result.recipe_id} className='listThumbNail'>
         <a href={result.f2f_url}>
-          {/* <iframe src={result.f2f_url} frameborder="0">pizza</iframe> */}
           <h1>{result.title}</h1>
           <img src={result.image_url} alt={result.title} className='thumbNailImage'/>
         </a>

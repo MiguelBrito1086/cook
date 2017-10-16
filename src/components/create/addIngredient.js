@@ -10,12 +10,18 @@ export default class AddIngredient extends Component {
       ingredientName: '',
       ingredientAmount: '',
       ingredientMeasure: 'tspn',
-      instruction: '',
+      instructions: '',
       allIngredients: [],
       newRecipe: [],
     }
     this.addToList = this.addToList.bind(this)
+    this.addToRecipeArray = this.addToRecipeArray.bind(this)
     this._remove = this._remove.bind(this)
+  }
+
+  componentDidMount() {
+    const recipes = JSON.parse(localStorage.getItem('recipes'))
+    this.setState({ newRecipe: recipes || [] })
   }
 
   _change = event => {
@@ -34,10 +40,6 @@ export default class AddIngredient extends Component {
     this.setState({ allIngredients: allIngredientsExceptForDeleting })
   }
 
-  // _submit = event => {
-  //
-  // }
-
   addToList = (event) => {
     event.preventDefault();
     let allIngredients = this.state.allIngredients.concat({
@@ -45,23 +47,27 @@ export default class AddIngredient extends Component {
       amount: this.state.ingredientAmount,
       measure: this.state.ingredientMeasure,
     });
-    this.setState({ allIngredients, ingredientName: '', ingredientAmount: '' })
+    this.setState({ allIngredients, ingredientName: '', ingredientAmount: '' });
+    this.refs.ingredientName.focus()
   }
 
   addToRecipeArray = (event) => {
     event.preventDefault();
     let newRecipe = this.state.newRecipe.concat({
       recipeName: this.state.recipeName,
-      amount: this.state.ingredientAmount,
-      measure: this.state.ingredientMeasure,
+      allIngredients: this.state.allIngredients,
+      instructions: this.state.instructions,
     });
-    this.setState({ newRecipe, recipeName: '', ingredientName: '', ingredientAmount: '' })
+    this.setState({ newRecipe, recipeName: '', allIngredients: [], instructions: '', }, () => {
+      localStorage.setItem('recipes', JSON.stringify(this.state.newRecipe))
+    })
+
     console.log(newRecipe);
   }
 
   render() {
     let ingredients = this.state.allIngredients.map((allIngredient, index) => (
-          <li key={index}>
+          <li key={index} className='ingredientList'>
             <button type='button' onClick={this._remove} data-ingredient-index={index}>X</button>
             <span>{allIngredient.name} : {allIngredient.amount} {allIngredient.measure}</span>
           </li>
@@ -72,11 +78,11 @@ export default class AddIngredient extends Component {
         <h1>Create your own recipe!</h1>
         <form action="submit" onSubmit={this.addToList}>
           <label>Name of your Recipe:</label>
-          <input type="text" onChange={this._change} value={this.state.recipeName}/>
+          <input type="text" name='recipeName' value={this.state.recipeName} onChange={this._change}/>
           <p>Please add your ingredients.</p>
           <div className='ingName'>
             <label htmlFor="POST-name">Ingredient Name:</label>
-            <input type="text" onChange={this._change} value={this.state.ingredientName} name='ingredientName'/>
+            <input type="text" onChange={this._change} value={this.state.ingredientName} name='ingredientName' ref='ingredientName'/>
           </div>
           <div className='ingAmount'>
             <label htmlFor="POST-name">Amount:</label>
@@ -95,16 +101,16 @@ export default class AddIngredient extends Component {
               <option value="ml">ml</option>
               <option value="L">L</option>
             </select>
-            <button type='button' onClick={this.addToList}>Add Ingredient</button>
+            <button type='submit' onClick={this.addToList}>Add Ingredient</button>
           </div>
           <div>
             <span>{ingredients}</span>
           </div>
           <div className='recipeInstructions'>
             <p>Add Instructions:</p>
-            <textarea name="instructions" id="instructions" cols="100" rows="20" value={this.state.instruction}/>
+            <textarea name="instructions" id="instructions" cols="100" rows="20" value={this.state.instructions} onChange={this._change}/>
           </div>
-          <button type='submit' >Submit Recipe</button>
+          <button type='button' onClick={this.addToRecipeArray}>Submit Recipe</button>
         </form>
       </div>
     )

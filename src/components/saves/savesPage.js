@@ -1,12 +1,19 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
+import NavBar from '../navBar/navbar';
+import MyRecipes from './myRecipes';
 // import SavedRecipes from './saves/savedRecipes';
-// import MyRecipes from './saves/myRecipes';
-//
-// export default class SavesPage extends Component {
-//   render() {
-//     return (
-//       <div>
-//       </div>
-//     )
-//   }
-// }
+
+export default class SavesPage extends Component {
+  constructor(props){
+    super(props)
+  }
+  render() {
+    return (
+      <div>
+        <NavBar />
+        {this.props.children}
+        <MyRecipes />
+      </div>
+    )
+  }
+}
