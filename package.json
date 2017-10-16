@@ -9,8 +9,11 @@
     "react-scripts": "1.0.14",
     "sass": "^1.0.0-beta.2"
   },
+  "homepage":"https:MiguelBrito1086.github.io/cook",
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
