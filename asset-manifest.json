@@ -1,10 +1,14 @@
 {
-  "main.css": "static/css/main.08629411.css",
-  "main.css.map": "static/css/main.08629411.css.map",
-  "main.js": "static/js/main.349d28e7.js",
-  "main.js.map": "static/js/main.349d28e7.js.map",
+  "main.css": "static/css/main.770e9d7a.css",
+  "main.css.map": "static/css/main.770e9d7a.css.map",
+  "main.js": "static/js/main.afedeecb.js",
+  "main.js.map": "static/js/main.afedeecb.js.map",
   "static/media/CookLogo.png": "static/media/CookLogo.d87b2dbb.png",
-  "static/media/grill.png": "static/media/grill.2e353c0b.png",
-  "static/media/onion.jpg": "static/media/onion.fd89b010.jpg",
-  "static/media/salad.jpg": "static/media/salad.269d289e.jpg"
+  "static/media/breakfast.jpg": "static/media/breakfast.539d3606.jpg",
+  "static/media/burger.jpg": "static/media/burger.819fd0c6.jpg",
+  "static/media/cuttingboard.png": "static/media/cuttingboard.db464212.png",
+  "static/media/fruit.png": "static/media/fruit.4a600e81.png",
+  "static/media/grill.png": "static/media/grill.c1831993.png",
+  "static/media/onion.jpg": "static/media/onion.c7a94467.jpg",
+  "static/media/salad.jpg": "static/media/salad.47dccdf7.jpg"
 }
