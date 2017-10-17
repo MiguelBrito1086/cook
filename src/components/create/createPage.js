@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from '../navBar/navbar';
 import AddIngredient from '../create/addIngredient';
 import { NavLink } from 'react-router-dom';
 import Logo from '../../images/CookLogo.png';
@@ -21,7 +20,6 @@ export default class CreatePage extends Component {
             </div>
           </div>
         </div>
-        {/* <NavBar /> */}
         <AddIngredient />
       </div>
     )

@@ -291,3 +291,42 @@ body {
 .submitRecipe {
   margin: 1em 0em 1em 0em;
 }
+
+.navBarSaved{
+  background-color: white;
+  height: 20em;
+  background-image: url('../images/burger.jpg');
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.savedBody {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-image: url('../images/cuttingboard.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
+.renderSaved {
+  width: 90%;
+}
+
+.recipeCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(251, 235, 200, 0.68);
+  width: 100%;
+  margin-top: 2em;
+  border-radius: 15px;
+}
+
+.savedInstruction {
+  margin:2em;
+  width:70%;
+}
