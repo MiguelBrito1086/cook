@@ -79,8 +79,10 @@ export default class AddIngredient extends Component {
         <div className='createBody'>
           <div>
             <form action="submit" onSubmit={this.addToList} className='createForm'>
-              <label>Name of your Recipe:</label>
-              <input type="text" name='recipeName' value={this.state.recipeName} onChange={this._change}/>
+              <div className='createRecipeName'>
+                <label>Name of your Recipe:</label>
+                <input type="text" name='recipeName' value={this.state.recipeName} onChange={this._change}/>
+              </div>
               <p>Please add your ingredients.</p>
               <div className='ingName'>
                 <label htmlFor="POST-name">Ingredient Name:</label>
@@ -106,15 +108,15 @@ export default class AddIngredient extends Component {
                 </select>
                 <button type='submit' onClick={this.addToList}>Add Ingredient</button>
               </div>
+              <div className='renderedIng'>
+                <span>{ingredients}</span>
+              </div>
               <div className='recipeInstructions'>
                 <p>Add Instructions:</p>
                 <textarea name="instructions" id="instructions" cols="40" rows="5" value={this.state.instructions} onChange={this._change}/>
               </div>
               <button className='submitRecipe' type='button' onClick={this.addToRecipeArray}>Submit Recipe</button>
             </form>
-          </div>
-          <div className='renderedIng'>
-            <span>{ingredients}</span>
           </div>
         </div>
       </div>

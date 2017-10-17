@@ -26,11 +26,11 @@ class MyRecipes extends Component {
   render() {
     const recipes = this.state.recipes.map((recipe, i) => <div className='renderSaved' key={i}>
         <div className='recipeCard'>
-          <div>
-            <h2>
+          <div className='titleAndIngredients'>
+            <h2 className='recipeTitle'>
               {recipe.recipeName}
             </h2>
-            <ul>
+            <ul className='cardList'>
               {recipe.allIngredients.map((item, i) => {
                 return <li key={i}>
                   <strong>{item.name}</strong> ({item.amount} {item.measure})
@@ -39,12 +39,14 @@ class MyRecipes extends Component {
             </ul>
           </div>
           <div className='savedInstruction'>
+            <h3>Instructions</h3>
             {recipe.instructions.split("\n").map((para, i) => {
               return <p key={i}>{para}</p>
             })}
           </div>
-          <div>
+          <div className='removeRecipe'>
             <button type='button' onClick={this._remove} data-recipe-index={i}>X</button>
+            <span>Remove Recipe</span>
           </div>
         </div>
       </div>
@@ -52,7 +54,14 @@ class MyRecipes extends Component {
 
 
     return (
-      <div className='savedBody'>{recipes}</div>
+      <div className='savedBody'>
+        <h1 id='myRecipesTitle'>My Recipes</h1>
+        <div>
+          <div className='renderCard'>
+            {recipes.length > 0 ? recipes : <h5 className='noRecipes'>No Recipes Saved!</h5>}
+          </div>
+        </div>
+      </div>
     );
   }
 }

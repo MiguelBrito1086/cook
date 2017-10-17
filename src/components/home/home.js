@@ -18,7 +18,6 @@ export default class Home extends Component {
           </p>
           <p>save your favorites and create you own!</p>
         </div>
-        <div className='blueberries'></div>
       </div>
       <div className='searchSection'>
         <h1>Find something yummy to <span className='welcomeCook'> Cook </span></h1>

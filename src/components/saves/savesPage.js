@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from '../navBar/navbar';
 import MyRecipes from './myRecipes';
 import { NavLink } from 'react-router-dom';
 import Logo from '../../images/CookLogo.png';

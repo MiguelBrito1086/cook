@@ -42,6 +42,13 @@ body {
   font-family: 'Poiret One', cursive;
   font-weight: 600;
   letter-spacing: 1px;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  transition: all .5s ease-in-out;
+}
+
+.links a:hover {
+  background-color: #F4C63B;
 }
 
 .welcomeSection {
@@ -60,7 +67,6 @@ body {
   font-size: 7em;
   font-style: italic;
   margin: 1em 0em 0em 1em;
-  opacity: 1;
 }
 
 .welcome p {
@@ -127,9 +133,13 @@ body {
   border: none;
   border-radius: 5px;
   background-color: #6488bb;
+  color: white;
   font-family: 'Quicksand', sans-serif;
   font-size: 22px;
   margin: 1em 0em 3.2em 1em;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  transition: all .5s ease-in-out;
 }
 
 .searchBarSection button:focus {
@@ -139,10 +149,6 @@ body {
 
 .searchBarSection button:hover {
   background-color: #F4C63B;
-}
-
-.searchResultsSection {
-  /*height: 40em;*/
 }
 
 .searchThumbNail {
@@ -184,8 +190,10 @@ body {
 
 .createRecipe {
   background-image: url('../images/fruit.png');
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .createTitle {
@@ -203,9 +211,6 @@ body {
 }
 
 .createForm {
-  /*display: flex;*/
-  /*justify-content: center;*/
-  /*flex-direction: column;*/
   font-family: 'Poiret One', cursive;
   font-size: 30px;
   margin: 0em 2em 0em 3em;
@@ -224,7 +229,7 @@ body {
 }
 
 .createForm button {
-  background-color: #3b8ec2;
+  background-color: #6488bb;
   height: 2.5em;
   width: 10em;
   border: none;
@@ -233,7 +238,15 @@ body {
   position: relative;
   top: -4.5px;
   color: white;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  transition: all .5s ease-in-out;
 }
+
+.createForm button:hover {
+  background-color: #F4C63B;
+}
+
 
 .ingredientList {
   list-style: none;
@@ -242,22 +255,32 @@ body {
   background-color: rgba(180, 184, 177, 0.57);
   padding: 2px;
   margin: 3px;
+  margin-left: 6em;
   border-radius: 5px;
+  width: 10em;
 }
 
 .ingredientList button {
-  background-color: #3b8ec2;
+  background-color: #6488bb;
   color: white;
+  width: 2em;
+  height: auto;
   border: none;
   border-radius: 5px;
   margin-right: 1em;
   position: relative;
   top: -5px;
   outline: none;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  transition: all .5s ease-in-out;
+}
+
+.ingredientList button:hover {
+  background-color: #F4C63B;
 }
 
 .renderedIng {
-  margin-top: 8em;
   font-weight: 900;
 }
 
@@ -282,10 +305,17 @@ body {
   position: relative;
   top: -4.5px;
   color: white;
-  background-color: #3b8ec2;
+  background-color: #6488bb;
   outline: none;
   font-size: 12px;
   margin: .5em;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  transition: all .5s ease-in-out;
+}
+
+#ingredientMeasure:hover {
+  background-color: #F4C63B;
 }
 
 .submitRecipe {
@@ -303,17 +333,35 @@ body {
 
 .savedBody {
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   flex-direction: column;
   width: 100%;
+  min-height: 100vh;
   background-image: url('../images/cuttingboard.png');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+#myRecipesTitle {
+  font-family: 'Lobster Two', cursive;
+  font-size: 4.5em;
+  margin: 0em 0em .25em 1em;
+  padding-top: .5em;
+}
+
+.renderCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .renderSaved {
-  width: 90%;
+  width: 75%;
 }
 
 .recipeCard {
@@ -326,7 +374,995 @@ body {
   border-radius: 15px;
 }
 
+.titleAndIngredients {
+  margin: 1em;
+  width: 15em;
+}
+
 .savedInstruction {
-  margin:2em;
-  width:70%;
+  margin: 3.5em 2em 1.5em 1em;
+  width: 55%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+}
+
+.savedInstruction h3 {
+  margin: 0;
+}
+
+.noRecipes {
+  height: 100vh;
+  color: white;
+  font-family: 'Lobster Two', cursive;
+  font-size: 10em;
+  margin: 0;
+  padding-top: .5em;
+}
+
+.recipeTitle {
+  margin: 0;
+  font-size: 32px;
+  font-family: 'Lobster Two', cursive;
+}
+
+.cardList {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.removeRecipe {
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 1em;
+}
+
+.removeRecipe button {
+  margin-right: .7em;
+  background-color: #6488bb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+  transition: all .5s ease-in-out;
+}
+
+.removeRecipe button:hover {
+  background-color: #F4C63B;
+}
+
+/******************************************************************************/
+
+@media handheld, screen and (max-width: 768px) {
+
+  .navbarSection {
+    background-color: white;
+    height: 18em;
+    background-image: url('../images/onion.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .navbarLogo {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  #logo {
+    width: 10em;
+    height: 9em;
+    background-color: rgba(219, 219, 212, 0.80);
+    border-radius: 25px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+  }
+
+  .links a {
+    margin-top: .5em;
+    padding: .5em;
+    text-decoration: none;
+    color: #132953;
+    font-size: 1.5em;
+    background-color: rgba(219, 219, 212, 0.90);
+    border-radius: 10px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .welcomeSection {
+    height: 30em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-image: url('../images/salad.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .welcomeTitle {
+    font-family: 'Lobster Two', cursive;
+    font-size: 7em;
+    font-style: italic;
+    margin: .5em 0em 0em 0em;
+  }
+
+  .welcome p {
+    margin: .5em 1em 0em 1em;
+    font-family: 'Poiret One', cursive;
+    font-size: 26px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .welcomeCook {
+    font-family: 'Lobster Two', cursive;
+    font-size: 36px;
+  }
+
+  .searchSection {
+    height: 20em;
+    background-image: url('../images/grill.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1em;
+  }
+
+  .searchSection h1 {
+    font-size: 40px;
+    width: 8em;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    margin: 1em;
+    padding: .2em;
+    background-color: rgba(219, 219, 212, 0.30);
+    border-radius: 10px;
+  }
+
+  .searchBarSection form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+  }
+
+  .searchBarSection input {
+    width: 16em;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    padding: .2em 0em .2em .5em;
+    border-radius: 5px;
+    border: none;
+    color: #173D77;
+  }
+
+  .searchBarSection input:focus {
+    outline: none;
+  }
+
+  .searchBarSection input::placeholder {
+    color: #91AACE;
+    font-style: italic;
+  }
+
+  .searchBarSection button {
+    width: 8em;
+    border: none;
+    border-radius: 5px;
+    background-color: #6488bb;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    margin: 1em 0em 3.2em 1em;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  .searchBarSection button:focus {
+    outline: none;
+  }
+
+  .searchThumbNail {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: #173D77;
+    margin: .75em 0em 1em 0em;
+    padding: 0;
+  }
+
+  .searchThumbNail li {
+    list-style: none;
+    margin-bottom: 2em;
+  }
+
+  .listThumbNail a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #F4C63B;
+  }
+
+  .thumbNailImage{
+    width: 20em;
+    height: 20em;
+    object-fit: cover;
+  }
+
+  .navBarCreate{
+    background-color: white;
+    height: 18em;
+    background-image: url('../images/breakfast.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .createRecipe {
+    background-image: url('../images/fruit.png');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .createTitle {
+    font-family: 'Lobster Two', cursive;
+    font-size: 4.5em;
+    margin: 0em 0em .2em .4em;
+    padding-top: .2em;
+  }
+
+  .createBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+  }
+
+  .createForm {
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0em 0em 0em 2em;
+    position: relative;
+  }
+
+  .createForm input {
+    font-family: 'Poiret One', cursive;
+    font-size: 24px;
+    width: 9em;
+    margin: .5em 0em .5em 3em;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .createForm input:focus {
+    outline: none;
+  }
+
+  .createForm button {
+    background-color: #6488bb;
+    height: 2.5em;
+    width: 10em;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    position: relative;
+    top: -4.5px;
+    color: white;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  .createForm button:hover {
+    background-color: #F4C63B;
+  }
+
+  .createRecipeName {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ingName {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ingAmount {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ingAmount input {
+    width: 9em;
+    margin: 0.5em 0em 0em 3em;
+  }
+
+  .ingAmount button {
+    margin: .5em 0em 0em 14.2em;
+  }
+
+  .ingredientList {
+    list-style: none;
+    font-family: 'Poiret One', cursive;
+    font-size: 24px;
+    background-color: rgba(180, 184, 177, 0.57);
+    padding: 2px;
+    margin-left: 1em;
+    border-radius: 5px;
+    width: 10em;
+  }
+
+  .ingredientList button {
+    background-color: #6488bb;
+    color: white;
+    width: 2em;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1em;
+    position: relative;
+    top: -5px;
+    outline: none;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  .ingredientList button:hover {
+    background-color: #F4C63B;
+  }
+
+  .renderedIng {
+    margin-top: 0em;
+    font-weight: 900;
+  }
+
+  #instructions {
+    font-family: 'Poiret One', cursive;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 13em;
+  }
+
+  .recipeInstructions {
+
+  }
+
+  .amount {
+    margin-top: 1em;
+  }
+
+  #ingredientMeasure {
+    background: transparent;
+    border: none;
+    height: 2.5em;
+    text-transform: none;
+    width: 6em;
+    position: relative;
+    top: -4.5px;
+    color: white;
+    background-color: #6488bb;
+    outline: none;
+    font-size: 12px;
+    margin: 1em 0em 0em 18.2em;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  #ingredientMeasure:hover {
+    background-color: #F4C63B;
+  }
+
+  .submitRecipe {
+    margin-left: 16.3em;
+  }
+
+  .navBarSaved{
+    background-color: white;
+    height: 20em;
+    background-image: url('../images/burger.jpg');
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .savedBody {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../images/cuttingboard.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  #myRecipesTitle {
+    font-family: 'Lobster Two', cursive;
+    font-size: 4.5em;
+    margin: 0em 0em .25em 0em;
+    padding-top: .5em;
+  }
+
+  .renderCard {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .renderSaved {
+    width: 100%;
+  }
+
+  .recipeCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(251, 235, 200, 0.68);
+    width: 22em;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    border-radius: 15px;
+    /*margin: 0;*/
+    padding: 1em;
+  }
+
+  .titleAndIngredients {
+    margin: 1em;
+    width: 18em;
+  }
+
+  .savedInstruction {
+    margin: 3.5em 1em 1.5em 1em;
+    width: 95%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+  }
+
+  .savedInstruction h3 {
+    margin: 0;
+  }
+
+  .noRecipes {
+    display: flex;
+    align-content: center;
+    height: 100vh;
+    color: white;
+    font-family: 'Lobster Two', cursive;
+    font-size: 5em;
+    text-align: center;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .recipeTitle {
+    margin: 0;
+    font-size: 32px;
+    font-family: 'Lobster Two', cursive;
+  }
+
+  .cardList {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .removeRecipe {
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 1em;
+    padding-left: 13em;
+  }
+
+  .removeRecipe button {
+    margin-right: .7em;
+    background-color: #6488bb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  .removeRecipe button:hover {
+    background-color: #F4C63B;
+  }
+
+}
+
+/******************************************************************************/
+
+@media handheld, screen and (max-width: 425px) {
+
+  .navbarSection {
+    background-color: white;
+    height: 22em;
+    background-image: url('../images/pancake.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .navbarLogo {
+    display: flex;
+    justify-content: center;
+  }
+
+  #logo {
+    width: 7em;
+    height: 6em;
+    background-color: rgba(219, 219, 212, 0.70);
+    border-radius: 25px;
+    margin: .5em 0em 0em 0em;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+  }
+
+  .links a {
+    margin: .5em 1em 0em 1em;
+    padding: .5em;
+    text-decoration: none;
+    color: #132953;
+    font-size: 1.5em;
+    background-color: rgba(219, 219, 212, 0.80);
+    border-radius: 10px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .welcomeSection {
+    height: 25em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-image: url('../images/salad.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .welcomeTitle {
+    font-family: 'Lobster Two', cursive;
+    font-size: 5em;
+    font-style: italic;
+    margin: .5em 0em 0em 0em;
+  }
+
+  .welcome p {
+    margin: .5em 1em 0em 1em;
+    font-family: 'Poiret One', cursive;
+    font-size: 26px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .welcomeCook {
+    font-family: 'Lobster Two', cursive;
+    font-size: 36px;
+  }
+
+  .searchSection {
+    height: 22em;
+    background-image: url('../images/grill.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .searchSection h1 {
+    font-size: 40px;
+    width: 6em;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    margin: 0em 0em 0em 0em;
+    padding: .2em;
+    background-color: rgba(219, 219, 212, 0.30);
+    border-radius: 10px;
+  }
+
+  .searchBarSection form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0em;
+  }
+
+  .searchBarSection input {
+    width: 12em;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    padding: .2em 0em .2em .5em;
+    border-radius: 5px;
+    border: none;
+    color: #173D77;
+  }
+
+  .searchBarSection input:focus {
+    outline: none;
+  }
+
+  .searchBarSection input::placeholder {
+    color: #91AACE;
+    font-style: italic;
+  }
+
+  .searchBarSection button {
+    width: 8em;
+    border: none;
+    border-radius: 5px;
+    background-color: #6488bb;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    margin: 0;
+    margin-top: 1em;
+  }
+
+  .searchBarSection button:focus {
+    outline: none;
+  }
+
+  .searchThumbNail {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: #173D77;
+    margin: .75em 0em 1em 0em;
+    padding: 0;
+    width: 23em;
+  }
+
+  .searchThumbNail li {
+    list-style: none;
+    margin-bottom: 2em;
+  }
+
+  #searchListTitle {
+    font-size: 20px;
+    margin-bottom: .5em;
+  }
+
+  .listThumbNail a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #F4C63B;
+  }
+
+  .thumbNailImage{
+    width: 8em;
+    height: 8em;
+    object-fit: cover;
+  }
+
+  .navBarCreate{
+    background-color: white;
+    height: 22em;
+    background-image: url('../images/breakfast.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .createRecipe {
+    background-image: url('../images/fruit.png');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .createTitle {
+    font-family: 'Lobster Two', cursive;
+    font-size: 4.5em;
+    margin: 0em 0em .2em .4em;
+    padding-top: .2em;
+  }
+
+  .createBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+  }
+
+  .createForm {
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0em 0em 0em 2em;
+    position: relative;
+  }
+
+  .createForm input {
+    font-family: 'Poiret One', cursive;
+    font-size: 24px;
+    width: 9em;
+    margin: .5em 0em .5em 3em;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .createForm input:focus {
+    outline: none;
+  }
+
+  .createForm button {
+    background-color: #6488bb;
+    height: 2.5em;
+    width: 10em;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    position: relative;
+    top: -4.5px;
+    color: white;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  .createForm button:hover {
+    background-color: #F4C63B;
+  }
+
+  .createRecipeName {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ingName {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ingAmount {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ingAmount input {
+    width: 9em;
+    margin: 0.5em 0em 0em 3em;
+  }
+
+  .ingAmount button {
+    margin: .5em 0em 0em 14.2em;
+  }
+
+  .ingredientList {
+    list-style: none;
+    font-family: 'Poiret One', cursive;
+    font-size: 24px;
+    background-color: rgba(180, 184, 177, 0.57);
+    padding: 2px;
+    margin-left: 1em;
+    border-radius: 5px;
+    width: 10em;
+  }
+
+  .ingredientList button {
+    background-color: #6488bb;
+    color: white;
+    width: 2em;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1em;
+    position: relative;
+    top: -5px;
+    outline: none;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  .ingredientList button:hover {
+    background-color: #F4C63B;
+  }
+
+  .renderedIng {
+    margin-top: 0em;
+    font-weight: 900;
+  }
+
+  #instructions {
+    font-family: 'Poiret One', cursive;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 12em;
+  }
+
+  .recipeInstructions {
+
+  }
+
+  .amount {
+    margin-top: 1em;
+  }
+
+  #ingredientMeasure {
+    background: transparent;
+    border: none;
+    height: 2.5em;
+    text-transform: none;
+    width: 6em;
+    position: relative;
+    top: -4.5px;
+    color: white;
+    background-color: #6488bb;
+    outline: none;
+    font-size: 12px;
+    margin: 1em 0em 0em 18.2em;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  #ingredientMeasure:hover {
+    background-color: #F4C63B;
+  }
+
+  .submitRecipe {
+    margin-left: 14.3em;
+  }
+
+  .navBarSaved{
+    background-color: white;
+    height: 22em;
+    background-image: url('../images/burger.jpg');
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .savedBody {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../images/cuttingboard.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  #myRecipesTitle {
+    font-family: 'Lobster Two', cursive;
+    font-size: 4.5em;
+    margin: 0em 0em .25em 0em;
+    padding-top: .5em;
+  }
+
+  .renderCard {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .renderSaved {
+    width: 100%;
+  }
+
+  .recipeCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(251, 235, 200, 0.68);
+    width: 20em;
+    margin-top: 1em;
+    border-radius: 15px;
+    /*margin: 0;*/
+    padding: 1em;
+  }
+
+  .titleAndIngredients {
+    margin: 1em;
+    width: 18em;
+  }
+
+  .savedInstruction {
+    margin: 3.5em 1em 1.5em 1em;
+    width: 95%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+  }
+
+  .savedInstruction h3 {
+    margin: 0;
+  }
+
+  .noRecipes {
+    display: flex;
+    align-content: center;
+    height: 100vh;
+    color: white;
+    font-family: 'Lobster Two', cursive;
+    font-size: 5em;
+    text-align: center;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .recipeTitle {
+    margin: 0;
+    font-size: 32px;
+    font-family: 'Lobster Two', cursive;
+  }
+
+  .cardList {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .removeRecipe {
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 1em;
+    padding-left: 11em;
+  }
+
+  .removeRecipe button {
+    margin-right: .7em;
+    background-color: #6488bb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    -webkit-transition: color .5s;
+    transition: color .5s;
+    transition: all .5s ease-in-out;
+  }
+
+  .removeRecipe button:hover {
+    background-color: #F4C63B;
+  }
+
 }
