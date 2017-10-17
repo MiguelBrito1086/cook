@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import NavBar from '../navBar/navbar';
 import Search from '../search/search';
+import Background from '../../images/onion.jpg';
 
 export default class Home extends Component {
+
+
   render() {
     return(
     <div>

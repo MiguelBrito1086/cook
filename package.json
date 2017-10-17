@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
     "sass": "^1.0.0-beta.2"
   },
-  "homepage":"https:MiguelBrito1086.github.io/cook",
+  "homepage": "https://MiguelBrito1086.github.io/cook",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",

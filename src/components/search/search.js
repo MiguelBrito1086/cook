@@ -1,6 +1,6 @@
-import React, { Component } from "react"
-import SearchButton from "./searchButton"
-import SearchResults from "./searchResults"
+import React, { Component } from "react";
+// import SearchButton from "./searchButton";
+import SearchResults from "./searchResults";
 
 const API_KEY = "07ca88bbbf944fd37cd7ca724a67151b"
 
@@ -21,15 +21,14 @@ export default class Search extends Component {
   fetchRecipe = event => {
     event.preventDefault()
     const { recipe } = this.state
-    const url = `https://food2fork.com/api/search?key=${API_KEY}&q=${recipe}`
-    let recipeURL = `http://cors-proxy.htmldriven.com/?url=${encodeURIComponent(
-      url
-    )}`
 
-    fetch(recipeURL)
+    fetch(`https://sdg-cp.herokuapp.com?key=${API_KEY}&q=${recipe}`, {
+      headers: {
+        "target-url": "https://food2fork.com/api/search"
+      }
+    })
       .then(r => r.json())
-      .then(({ body }) => {
-        const { recipes } = JSON.parse(body)
+      .then(({recipes}) => {
         this.setState({ recipes })
       })
   }
@@ -37,15 +36,15 @@ export default class Search extends Component {
   render() {
     return (
       <div className="searchBarSection">
-        <form action="submit">
+        <form action="submit" onSubmit={this.fetchRecipe}>
           <input
             type="text"
             onChange={this._search}
             placeholder="Find a Recipe"
             value={this.state.recipe}
           />
+          <button type='submit' onClick={this.fetchRecipe}>Search</button>
         </form>
-        <SearchButton onClick={this.fetchRecipe} />
         <SearchResults results={this.state.recipes} />
       </div>
     )
