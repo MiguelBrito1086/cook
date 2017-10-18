@@ -980,13 +980,13 @@ body {
   }
 
   .searchSection {
-    height: 22em;
+    height: 72em;
     background-image: url('../images/grill.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
   }
@@ -1000,6 +1000,10 @@ body {
     padding: .2em;
     background-color: rgba(219, 219, 212, 0.30);
     border-radius: 10px;
+  }
+
+  .searchBarSection {
+    width: 16em;
   }
 
   .searchBarSection form {
@@ -1037,8 +1041,8 @@ body {
     color: white;
     font-family: 'Quicksand', sans-serif;
     font-size: 22px;
-    margin: 0;
-    margin-top: 1em;
+    margin: 1em 0em 1em 0em;
+    /*margin-top: 1em;*/
   }
 
   .searchBarSection button:focus {
@@ -1052,12 +1056,12 @@ body {
     background-color: #173D77;
     margin: .75em 0em 1em 0em;
     padding: 0;
-    width: 23em;
+    width: 20em;
   }
 
   .searchThumbNail li {
     list-style: none;
-    margin-bottom: 2em;
+    margin: .5em 0em 2em 0em;
   }
 
   #searchListTitle {
