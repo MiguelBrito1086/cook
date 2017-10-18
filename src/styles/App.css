@@ -1302,7 +1302,7 @@ body {
     flex-direction: column;
     justify-content: center;
     background-color: rgba(251, 235, 200, 0.68);
-    width: 20em;
+    width: 17em;
     margin-top: 1em;
     border-radius: 15px;
     /*margin: 0;*/
@@ -1350,7 +1350,7 @@ body {
   .removeRecipe {
     font-family: 'Quicksand', sans-serif;
     margin-top: 1em;
-    padding-left: 11em;
+    padding-left: 8em;
   }
 
   .removeRecipe button {
