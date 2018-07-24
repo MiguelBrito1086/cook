@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root')
 
-  console.log({root})
+  // console.log({root})
   ReactDOM.render(<App />, root);
   registerServiceWorker();
 })
